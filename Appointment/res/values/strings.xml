@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">Parlour</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="strLogin">Login</string>
+    <string name="strCompName">Your Company</string>
+    <string name="strPickMap">Pick From Map</string>
+     <string name="strAboutOrg">About the organisation</string>
+     <string name="strAbout">About</string>
+<string name="strEmail">Email</string>
+<string name="strName">Name</string>
+<string name="strPass">password</string>
+<string name="strPhone">Phone (Optional)</string>
+<string name="strPlace">Place (Optional)</string>
+<string name="strAltEmail">Alt Email (Optional)</string>
+<string name="strConPassword">Confirm Password</string>
+<string name="strForPassword">Forgot Password</string>
+<string name="strReviews">Reviews</string>
+<color android:id="@+id/colHintFont" name="colHintFont">#FFFFFFFF</color>
+<color android:id="@+id/colEdtFont" name="colEdtFont">#FFFFFF</color>
+<color android:id="@+id/colMainBack" name="colMainBack">#FFFFFF</color>
+</resources>
