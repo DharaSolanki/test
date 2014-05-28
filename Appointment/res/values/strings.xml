@@ -9,7 +9,12 @@
     <string name="strPickMap">Pick From Map</string>
      <string name="strAboutOrg">About the organisation</string>
      <string name="strAbout">About</string>
+      <string name="user_category_prompt">Choose user category</string>
+       <string name="service_category_prompt">Choose service category</string>
+        <string name="day_schedule_prompt">Select Schedule</string>
 <string name="strEmail">Email</string>
+<string name="strStartTime">Start Time</string>
+<string name="strEndTime">End Time</string>
 <string name="strName">Name</string>
 <string name="strPass">password</string>
 <string name="strPhone">Phone (Optional)</string>
@@ -18,7 +23,24 @@
 <string name="strConPassword">Confirm Password</string>
 <string name="strForPassword">Forgot Password</string>
 <string name="strReviews">Reviews</string>
+<string name="strOrgName">Name</string>
+<string name="strOrg">Organization</string>
+<string name="strProvider">Service Provider</string>
+<string name="strCustomer">Customer</string>
+<string name="strOrgNameHint">Organization Name</string>
+<string name="strServiceCategory">Service Category</string>
+<string name="strDescription">Description</string>
+<string name="strSubmit">Submit</string>
+
 <color android:id="@+id/colHintFont" name="colHintFont">#FFFFFFFF</color>
 <color android:id="@+id/colEdtFont" name="colEdtFont">#FFFFFF</color>
 <color android:id="@+id/colMainBack" name="colMainBack">#FFFFFF</color>
+
+<string-array name="category_arrays">
+     <item>Choose user category</item>
+        <item>Customer</item>
+        <item>Service Provider</item>
+        <item>Organization</item>
+    </string-array>
+
 </resources>

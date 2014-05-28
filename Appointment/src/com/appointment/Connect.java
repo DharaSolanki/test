@@ -17,7 +17,7 @@ public Connect(Context context)
 
 public boolean ConnectWithWifi()
 {
-	connManager=(ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+	 connManager=(ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
 	mWifi=connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 	if(mWifi.isConnected())
 	{

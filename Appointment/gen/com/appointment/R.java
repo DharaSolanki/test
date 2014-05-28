@@ -8,6 +8,9 @@
 package com.appointment;
 
 public final class R {
+    public static final class array {
+        public static final int category_arrays=0x7f070000;
+    }
     public static final class attr {
     }
     public static final class color {
@@ -42,61 +45,90 @@ public final class R {
         public static final int textbox=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f090019;
-        public static final int btnLogout=0x7f09000e;
-        public static final int edtAltEmail=0x7f090016;
-        public static final int edtCanPassword=0x7f090018;
-        public static final int edtEmail=0x7f090002;
-        public static final int edtName=0x7f09000c;
-        public static final int edtPassword=0x7f090003;
-        public static final int edtPhone=0x7f090014;
-        public static final int edtPlace=0x7f090015;
-        public static final int imgGo=0x7f090007;
-        public static final int imgLocationMarker=0x7f090001;
-        public static final int imgPickMap=0x7f090010;
-        public static final int imgProfile=0x7f090012;
-        public static final int imgSignup=0x7f090006;
-        public static final int imgbtnLogin=0x7f090009;
-        public static final int imgbtnSignup=0x7f090008;
-        public static final int linLayHeading=0x7f09000f;
-        public static final int relLayMain=0x7f090000;
-        public static final int relLayProfile=0x7f090013;
-        public static final int relLayProfilePic=0x7f090011;
-        public static final int relLaybutton=0x7f090017;
-        public static final int relLaysub2=0x7f090005;
-        public static final int textView1=0x7f09000d;
-        public static final int txtForPassword=0x7f090004;
-        public static final int txtTitleEmail=0x7f09000b;
-        public static final int txtTitleName=0x7f09000a;
+        public static final int action_settings=0x7f0a0027;
+        public static final int btnEndTime=0x7f0a001a;
+        public static final int btnLogout=0x7f0a0015;
+        public static final int btnStartTime=0x7f0a0018;
+        public static final int btnSubmit=0x7f0a0010;
+        public static final int edtAltEmail=0x7f0a0025;
+        public static final int edtDescription=0x7f0a000f;
+        public static final int edtEmail=0x7f0a0002;
+        public static final int edtName=0x7f0a0013;
+        public static final int edtOrgName=0x7f0a000b;
+        public static final int edtPassword=0x7f0a0003;
+        public static final int edtPhone=0x7f0a0023;
+        public static final int edtPlace=0x7f0a0024;
+        public static final int imgGo=0x7f0a0007;
+        public static final int imgLocationMarker=0x7f0a0001;
+        public static final int imgPickMap=0x7f0a001e;
+        public static final int imgProfile=0x7f0a0020;
+        public static final int imgSignup=0x7f0a0006;
+        public static final int imgbtnLogin=0x7f0a0009;
+        public static final int imgbtnSignup=0x7f0a0008;
+        public static final int linLayHeading=0x7f0a001d;
+        public static final int multi_spinner=0x7f0a0016;
+        public static final int relLayMain=0x7f0a0000;
+        public static final int relLayProfile=0x7f0a0021;
+        public static final int relLayProfilePic=0x7f0a001f;
+        public static final int relLaybutton=0x7f0a0026;
+        public static final int relLaysub2=0x7f0a0005;
+        public static final int spnCategory=0x7f0a0022;
+        public static final int spnServiceCategory=0x7f0a000d;
+        public static final int textView1=0x7f0a0014;
+        public static final int txtDescription=0x7f0a000e;
+        public static final int txtEndTime=0x7f0a001c;
+        public static final int txtForPassword=0x7f0a0004;
+        public static final int txtName=0x7f0a000a;
+        public static final int txtServiceCategory=0x7f0a000c;
+        public static final int txtStartTime=0x7f0a001b;
+        public static final int txtTitleEmail=0x7f0a0012;
+        public static final int txtTitleEndTime=0x7f0a0019;
+        public static final int txtTitleName=0x7f0a0011;
+        public static final int txtTitleStartTime=0x7f0a0017;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int fragment_main=0x7f030001;
         public static final int login=0x7f030002;
-        public static final int profile=0x7f030003;
-        public static final int sign_up=0x7f030004;
+        public static final int org_signup_profile=0x7f030003;
+        public static final int profile=0x7f030004;
+        public static final int provider_signup_profile=0x7f030005;
+        public static final int sign_up=0x7f030006;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
+        public static final int day_schedule_prompt=0x7f05000a;
         public static final int hello_world=0x7f050001;
+        public static final int service_category_prompt=0x7f050009;
         public static final int strAbout=0x7f050007;
         public static final int strAboutOrg=0x7f050006;
-        public static final int strAltEmail=0x7f05000d;
+        public static final int strAltEmail=0x7f050012;
         public static final int strCompName=0x7f050004;
-        public static final int strConPassword=0x7f05000e;
-        public static final int strEmail=0x7f050008;
-        public static final int strForPassword=0x7f05000f;
+        public static final int strConPassword=0x7f050013;
+        public static final int strCustomer=0x7f050019;
+        public static final int strDescription=0x7f05001c;
+        public static final int strEmail=0x7f05000b;
+        public static final int strEndTime=0x7f05000d;
+        public static final int strForPassword=0x7f050014;
         public static final int strLogin=0x7f050003;
-        public static final int strName=0x7f050009;
-        public static final int strPass=0x7f05000a;
-        public static final int strPhone=0x7f05000b;
+        public static final int strName=0x7f05000e;
+        public static final int strOrg=0x7f050017;
+        public static final int strOrgName=0x7f050016;
+        public static final int strOrgNameHint=0x7f05001a;
+        public static final int strPass=0x7f05000f;
+        public static final int strPhone=0x7f050010;
         public static final int strPickMap=0x7f050005;
-        public static final int strPlace=0x7f05000c;
-        public static final int strReviews=0x7f050010;
+        public static final int strPlace=0x7f050011;
+        public static final int strProvider=0x7f050018;
+        public static final int strReviews=0x7f050015;
+        public static final int strServiceCategory=0x7f05001b;
+        public static final int strStartTime=0x7f05000c;
+        public static final int strSubmit=0x7f05001d;
+        public static final int user_category_prompt=0x7f050008;
     }
     public static final class style {
         /** 
@@ -120,10 +152,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

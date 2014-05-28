@@ -27,7 +27,7 @@ public class Profile extends Activity {
 	private final String app_id = "wnKwZraxPBKQ4Grfl8uPiSNABJZpT7UKTZrpgbra";
 
 	EditText edtname,edtEmail;
-	String strEmail;
+	String strEmail,strCategory;
 	ArrayList<String> parseTimeStamp;
 	ProgressDialog pdialog;
 	Button btnLogout;
@@ -43,6 +43,7 @@ public class Profile extends Activity {
 		Bundle b1=getIntent().getExtras();
 		
 		strEmail=b1.getString("email").toString();
+		strCategory=b1.getString("category").toString();
 		
 		edtname=(EditText)findViewById(R.id.edtName);
 		edtEmail=(EditText)findViewById(R.id.edtEmail);
@@ -104,8 +105,23 @@ public class Profile extends Activity {
 	
 	public void getData() throws ParseException {
 		 parseTimeStamp = new ArrayList<String>();
-	        ParseQuery<ParseObject> query = ParseQuery
-	                        .getQuery("Login");
+		 ParseQuery<ParseObject> query = null;
+		 if(strCategory.equalsIgnoreCase(getResources().getString(R.string.strOrg)))
+		 {
+			 query  = ParseQuery
+                     .getQuery("OrganizationSignUp");
+		 }
+		 else if(strCategory.equalsIgnoreCase(getResources().getString(R.string.strProvider)))
+		 {
+			 query  = ParseQuery
+                     .getQuery("ServiceProviderSignUp");
+		 }
+		 else
+		 {
+			 query  = ParseQuery
+                     .getQuery("Login");
+		 }
+	        
 	        query.whereEqualTo("email", strEmail);
 	        query.findInBackground(new FindCallback<ParseObject>() {
 

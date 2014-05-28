@@ -11,8 +11,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -25,10 +28,11 @@ public class SignUp extends Activity {
 	private final String app_id = "wnKwZraxPBKQ4Grfl8uPiSNABJZpT7UKTZrpgbra";
 	
 	private EditText edtName,edtEmail,edtPhone,edtPlace,edtAltEmail,edtPassword;
-	private String strName,strEmail,strPhone,strPlace,strAltemail,strPassword;
+	private String strName,strEmail,strPhone,strCategory,strPlace,strAltemail,strPassword;
 	private ImageButton imgbtnSignup;
 	ArrayList<String> parseTimeStamp;
 	boolean blIsUser=false;
+	Spinner spnCategory;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,7 @@ public class SignUp extends Activity {
 		edtAltEmail=(EditText)findViewById(R.id.edtAltEmail);
 		edtPassword=(EditText)findViewById(R.id.edtPassword);
 		imgbtnSignup=(ImageButton)findViewById(R.id.imgbtnSignup);
-		
+		spnCategory=(Spinner)findViewById(R.id.spnCategory);
 		
 		
 		Parse.initialize(this, app_id, client_id);
@@ -57,13 +61,15 @@ public class SignUp extends Activity {
 				strPlace=edtPlace.getText().toString();
 				strAltemail=edtAltEmail.getText().toString();
 				strPassword=edtPassword.getText().toString();
+				strCategory=String.valueOf(spnCategory.getSelectedItem());
 
 				try {
 					
 					
 					Log.i("demo",strEmail);
-					if(!strName.isEmpty()||!strEmail.isEmpty()||!strPassword.isEmpty())
+					if(!strName.isEmpty()&&!strEmail.isEmpty()&&!strPassword.isEmpty()&&!strCategory.equalsIgnoreCase("Choose user category"))
 					{
+						Log.i("signup","selected category is : "+strCategory);
 						if(isValidEmail(strEmail))
 						{
 							if(strPassword.length()>3)
@@ -105,6 +111,20 @@ public class SignUp extends Activity {
 			}
 		});
 		
+		spnCategory.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
+				// TODO Auto-generated method stub
+				strCategory=parent.getItemAtPosition(pos).toString();
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 	public final static boolean isValidEmail(String target) {
 		  if (TextUtils.isEmpty(target)) {
@@ -176,19 +196,58 @@ public class SignUp extends Activity {
 					}
 					 if(!blIsUser)
 				        {
-							ParseObject objUserDetails = new ParseObject("Login");
-							objUserDetails.put("username", strName);
-							objUserDetails.put("email", strEmail);
-							objUserDetails.put("phone", strPhone);
-							objUserDetails.put("place", strPlace);
-							objUserDetails.put("alternateEmail", strAltemail);
-							objUserDetails.put("password", strPassword);
-					
-							objUserDetails.saveInBackground();
-							Intent in = new Intent(SignUp.this,Profile.class);
-							in.putExtra("email", strEmail);
-							startActivity(in);
-							finish();
+						 if(strCategory.equalsIgnoreCase(getResources().getString(R.string.strProvider)))
+						 {
+							 ParseObject objUserDetails = new ParseObject("ServiceProviderSignUp");
+								objUserDetails.put("username", strName);
+								objUserDetails.put("email", strEmail);
+								objUserDetails.put("phone", strPhone);
+								objUserDetails.put("city", strPlace);
+								objUserDetails.put("alternateEmail", strAltemail);
+								objUserDetails.put("password", strPassword);
+						
+								objUserDetails.saveInBackground();
+								Intent in = new Intent(SignUp.this,ProviderSignupProfile.class);
+								in.putExtra("email", strEmail);
+								in.putExtra("category", strCategory);
+								startActivity(in);
+								finish();
+						 }
+						 else if(strCategory.equalsIgnoreCase(getResources().getString(R.string.strOrg)))
+						 {
+							 ParseObject objUserDetails = new ParseObject("OrganizationSignUp");
+								objUserDetails.put("username", strName);
+								objUserDetails.put("email", strEmail);
+								objUserDetails.put("phone", strPhone);
+								objUserDetails.put("city", strPlace);
+								objUserDetails.put("alternateEmail", strAltemail);
+								objUserDetails.put("password", strPassword);
+						
+								objUserDetails.saveInBackground();
+								Intent in = new Intent(SignUp.this,Profile.class);
+								in.putExtra("email", strEmail);
+								in.putExtra("category", strCategory);
+								startActivity(in);
+								finish();
+						 }
+						 else
+						 {
+							 ParseObject objUserDetails = new ParseObject("Login");
+								objUserDetails.put("username", strName);
+								objUserDetails.put("email", strEmail);
+								objUserDetails.put("phone", strPhone);
+								objUserDetails.put("place", strPlace);
+								objUserDetails.put("alternateEmail", strAltemail);
+								objUserDetails.put("password", strPassword);
+						
+								objUserDetails.saveInBackground();
+								Intent in = new Intent(SignUp.this,Profile.class);
+								in.putExtra("email", strEmail);
+								in.putExtra("category", strCategory);
+								startActivity(in);
+								finish();
+						 }
+							
 					}
 				}
 

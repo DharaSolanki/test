@@ -20,8 +20,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_marginTop="10dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -48,12 +47,23 @@
         android:layout_weight="2.5"
         android:padding="5dp" >
 
-        <EditText
-            android:id="@+id/edtName"
+        <Spinner
+            android:id="@+id/spnCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
+           
+            android:layout_marginTop="5dp"
+            android:entries="@array/category_arrays"
+            android:paddingLeft="10dp"
+            android:prompt="@string/service_category_prompt" />
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spnCategory"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
             android:hint="@string/strName"
@@ -143,16 +153,32 @@
             android:hint="@string/strPass"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
+             android:layout_marginBottom="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/colEdtFont"
             android:textColorHint="@color/colHintFont" />
+        <!--
+            <TextView
+                android:id="@+id/txtSelectCateg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                 android:layout_centerVertical="true"
+            android:layout_marginTop="7dp"
+                 android:layout_alignLeft="@+id/edtPassword"
+                  android:layout_below="@+id/edtPassword"
+                android:text="Select Category :"
+                 android:paddingLeft="10dp"
+                  android:textColor="@color/colHintFont"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        -->
 
         <RelativeLayout
             android:id="@+id/relLaybutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/edtCanPassword"
+            android:layout_below="@+id/edtPassword"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp" >
 

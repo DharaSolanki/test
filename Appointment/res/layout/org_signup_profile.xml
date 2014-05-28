@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:gravity="center_vertical"
+    >
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strOrgName"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edtOrgName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtName"
+        android:layout_marginLeft="28dp"
+        android:hint="@string/strOrgNameHint"
+        android:layout_toRightOf="@+id/txtName"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtServiceCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edtOrgName"
+        android:layout_marginTop="10dp"
+        android:text="@string/strServiceCategory"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/spnServiceCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtOrgName"
+        android:layout_below="@+id/txtServiceCategory"
+        android:prompt="@string/service_category_prompt"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtServiceCategory"
+        android:layout_below="@+id/spnServiceCategory"
+        android:layout_marginTop="10dp"
+        android:text="@string/strDescription"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spnServiceCategory"
+        android:layout_below="@+id/txtDescription"
+        android:layout_marginTop="10dp"
+        android:inputType="textPostalAddress" />
+
+   
+
+    
+        
+         <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/edtDescription"
+        android:text="@string/strSubmit" />
+   
+</RelativeLayout>
